@@ -1,0 +1,21 @@
+.container {
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: inherit;
+  }
+  
+  .subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: inherit;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }

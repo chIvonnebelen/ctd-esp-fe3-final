@@ -1,0 +1,46 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navTitle {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+    color: inherit;
+  }
+  
+  .navLinks {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .link:hover {
+    color: #1976d2;
+  }
+  
+  .themeButton {
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .themeButton:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
