@@ -26,8 +26,8 @@ const Form = () => {
     if (!formData.fullName) {
       newErrors.fullName = 'Por favor ingrese su nombre completo';
       isValid = false;
-    } else if (formData.fullName.length <= 6) {
-      newErrors.fullName = 'El nombre debe tener más de 6 caracteres';
+    } else if (formData.fullName.length <5) {
+      newErrors.fullName = 'El nombre debe tener más de 5 caracteres';
       isValid = false;
     }
     if (!formData.email) {

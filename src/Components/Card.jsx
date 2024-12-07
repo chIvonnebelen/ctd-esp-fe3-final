@@ -5,16 +5,18 @@ import PropTypes from 'prop-types';
 
 const Card = ({ name, username, id }) => {
   
-  const { state } = useContext(ContextGlobal);
+  const { state, dispatch } = useContext(ContextGlobal);
 
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-    const favs = JSON.parse(localStorage.getItem("favs")) || [];
-    const isDuplicate = favs.some(fav => fav.id === id);
+  const isFavorite = state.favs.some(fav => fav.id === id);
 
-    if (!isDuplicate) {
-      const newFavs = [...favs, { name, username, id }];
-      localStorage.setItem("favs", JSON.stringify(newFavs));
+  const handleFavToggle = () => {
+    if (isFavorite) {
+     
+      dispatch({ type: "REMOVE_FAV", payload: { id } });
+      alert("Removido de Favoritos");
+    } else {
+      
+      dispatch({ type: "ADD_FAV", payload: { name, username, id } });
       alert("Agregado a Favoritos");
     }
   };
@@ -31,12 +33,14 @@ const Card = ({ name, username, id }) => {
           borderRadius: '4px'
         }}
       />
+      <h3>{name}</h3>
+      <p>@{username}</p>
       <Link to={`/dentist/${id}`}>
-        <h3>{name}</h3>
-        <p>@{username}</p>
+        View Details
       </Link>
-        <button onClick={addFav} className="favButton">⭐</button>
+        <button onClick={handleFavToggle} className="favButton">{isFavorite ? "❌" : "⭐"}</button>
     </div>
+  
   );
 };
 
